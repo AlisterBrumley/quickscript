@@ -1,0 +1,16 @@
+#! /bin/bash
+
+if [ $# -eq 0 ]; then
+	echo "no script name passed!"
+	exit 1
+elif [ -e $1 ]; then
+	echo "name already used!"
+fi
+
+mkdir $1
+cd $1
+touch $1
+echo "#! /bin/bash" >> $1
+printf "\n" >> $1
+nano $1
+chmod +x $1
